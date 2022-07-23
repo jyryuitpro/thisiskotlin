@@ -4,12 +4,36 @@ import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.thisiskotlin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    // 지연초기화 (주로 클래스에 사용하기 위한 문법이다!)
+    // lateinit var 변수명: 타입 -> 기본형에는 사용할 수 없다!
+    lateinit var name: String // String은 기본형: Int, Long, float, Double... 이 아니다
+    lateinit var person: Person
+//    var name: String = "Scott"
+
+    // val 변수명 by lazy { 변수에 들어갈 클래스생성자 또는 값 }
+    // lazy는 기본형에도 사용가능하다
+    val age by lazy {
+//        Person()
+        21
+    }
+
+    val binding by lazy {
+        // inflate: ActivityMainBinding를 생성을 해서 넘겨주는 역할을 한다
+        ActivityMainBinding.inflate(layoutInflater)
+    }
+
     val TAG = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        name = "Scott"
+        name = "Kelly"
+
+        person = Person()
 
         var myName = "류지영"
         Log.d(TAG, "my name=$myName")
@@ -341,4 +365,11 @@ class Son {
     fun getNumber(zergling: String, hidra: String): Int {
         return 2
     }
+}
+
+class Person {
+    var name = ""
+    var age = ""
+    var address = ""
+    var tel = ""
 }
