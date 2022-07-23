@@ -213,5 +213,29 @@ class MainActivity : AppCompatActivity() {
             if (index == 5) continue
             Log.d(TAG, "현재 숫자=${index}")
         }
+
+        functionName()
+
+        functionParam("값", 153)
+
+        var pi = getPi()
+        Log.d(TAG, "pi=${pi}")
     }
+
+    // 기본 함수
+    fun functionName() {
+
+    }
+
+    // 입력값이 있는 함수
+    fun functionParam(param1: String, param2: Int) {
+        Log.d(TAG, "param1=${param1}, param2=${param2}")
+    }
+
+    // 출력값이 있는 함수
+    fun getPi(): Double {
+        return 3.141592
+    }
+
+    // 함수를 사용하는 용도 > 코드를 분류하기 위해서
 }
