@@ -30,6 +30,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+//            binding.button.setOnClickLister()
+//            binding.imageView.setImageLavel(50)
+//            binding.textView.text = "반가워"
+
+        // with: 위젯에 접근할 때 사용하는 스코프함수
+        with (binding) {
+//            button.setOnClickLister()
+//            imageView.setImageLavel(50)
+//            textView.text = "반가워"
+        }
+
         name = "Scott"
         name = "Kelly"
 
@@ -285,6 +296,8 @@ class MainActivity : AppCompatActivity() {
         var safeCallResult = number?.plus(37) ?: 51   // 2. Safe Call, 3. Elvis Expression
 
         var safeCallResult2 = safeCallResult.plus(53)
+
+        studyRun()
     }
 
     // 기본 함수
@@ -303,6 +316,71 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 함수를 사용하는 용도 > 코드를 분류하기 위해서
+
+    // 스코프함수
+    // run, let, apply, also
+    // with
+    // 1. run
+    fun studyRun() {
+        val phones = mutableListOf<String>("010-1234-5678", "010-3456-7899", "010-1478-2369")
+        val list = mutableListOf<Int>(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val names = mutableListOf<String>("Scott", "Kelly", "Michael")
+
+        val seoulPeople = SeoulPeople()
+
+        seoulPeople.persons.add(Person("Scott", "010-1234-5678", 19))
+        seoulPeople.persons.add(Person("Scott", "010-1234-5678", 19))
+        seoulPeople.persons.add(Person("Scott", "010-1234-5678", 19))
+
+        // (run, apply) 그리고 (let, also)가 동일한 역할을 하지만 반환타입이 다르다!
+
+        // 변수에 뭔가 액션을 취하고 변수에 다른 결괏값을 받고 싶을 때 사용한다. (run, let 공통사항!)
+        // .run, apply: 내가 실행한 변수와는 상관없이, 마지막 값이 반환된다!
+        val resultRun = seoulPeople.persons.run {
+            add(Person("Scott", "010-1234-5678", 19))
+            add(Person("Scott", "010-1234-5678", 19))
+            add(Person("Scott", "010-1234-5678", 19))
+            size
+//            11
+        }
+
+        // run과 동일하지만 alias (persons)를 지정할 수 있다.
+        val resultLet = seoulPeople.persons.let { persons ->
+            persons.add(Person("Scott", "010-1234-5678", 19))
+            persons.add(Person("Scott", "010-1234-5678", 19))
+            persons.add(Person("Scott", "010-1234-5678", 19))
+        }
+
+        // ==================================.apply, also 스코프 함수 안에서 자기 자신을 되돌려준다.
+
+        val resultApply = seoulPeople.persons.apply {
+            // 즉 마지막에 있는 문장이랑 상관없이 persons에 반영된 (person 6개가 들어있는) persons 배열을 resultApply반환해준다.
+            add(Person("Scott", "010-1234-5678", 19))
+            add(Person("Scott", "010-1234-5678", 19))
+            add(Person("Scott", "010-1234-5678", 19))
+            11
+        }
+
+        Log.d("스코프함수", "resultApply=${resultApply}")
+
+        // apply와 동일하지만 alias (persons)를 지정할 수 있다.
+        val resultAlso = seoulPeople.persons.also { persons ->
+            persons.add(Person("Scott", "010-1234-5678", 19))
+            persons.add(Person("Scott", "010-1234-5678", 20))
+            persons.add(Person("Scott", "010-1234-5678", 21))
+            12
+        }
+
+        Log.d("스코프함수", "resultAlso=${resultAlso}")
+
+        phones.run {
+            add("010-9356-8541")
+        }
+
+        list.run {
+            // 변수가 가지고 있는 타입을 통째로 넘겨준다.
+        }
+    }
 }
 
 class Log {
@@ -367,9 +445,25 @@ class Son {
     }
 }
 
-class Person {
-    var name = ""
-    var age = ""
-    var address = ""
-    var tel = ""
+//class Person {
+//    var name = ""
+//    var age = ""
+//    var address = ""
+//    var tel = ""
+//}
+
+class SeoulPeople {
+    var persons = mutableListOf<Person>()
+
+    init {
+        persons.add(Person("Scott", "010-1234-5678", 19))
+        persons.add(Person("Kelly", "010-3456-7899", 20))
+        persons.add(Person("Michael", "010-1478-2369", 21))
+    }
 }
+
+data class Person (
+    var name: String = "",
+    var phone: String = "",
+    var age: Int = 21
+)
