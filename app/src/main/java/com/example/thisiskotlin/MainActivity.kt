@@ -220,6 +220,32 @@ class MainActivity : AppCompatActivity() {
 
         var pi = getPi()
         Log.d(TAG, "pi=${pi}")
+
+        // 클래스를 사용하는 방법
+        // 클래스의 사용
+        // 1. 초기화
+        var cls = 클래스() // 인스턴스 = 메모리에 로드되어 있는 클래스
+
+        cls.variable
+        cls.function()
+
+        var log = Log()
+
+//        log.d("태그", "메세지")
+        // 2. companion object 로 만들기
+        Log.d("태그", "메세지")
+
+//        var child = Child()
+//        child.showMoney()
+
+        var parent = Parent()
+        parent.showHouse()
+
+        var child = Child()
+        child.showHouse()
+
+        var son = Son()
+        var result = son.getNumber("zergling")
     }
 
     // 기본 함수
@@ -238,4 +264,66 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 함수를 사용하는 용도 > 코드를 분류하기 위해서
+}
+
+class Log {
+
+    companion object {
+        var variable = "난 누구"
+
+        fun d(tag: String, msg: String) {
+            print("[$tag] : [$msg]")
+        }
+    }
+}
+
+// 클래스 변수(프로퍼티, property)와 함수(메서드, method)의 모음
+class 클래스 {
+
+    init {
+        // 클래스를 초기화하면 호출된다
+    }
+
+    var variable: String = ""
+
+    fun function() {
+        var variable_local = ""
+    }
+}
+
+// 상속을 사용하는 이유
+// 1. 기존에 작성된 코드를 재활용하기 위해서
+// 2. 코드를 재활용하는데 -> 체계적으로 구조로 사용하기 위해서
+open class Parent {
+    var money = 50000000000
+    open var house = "강남 200평 아파트"
+
+    open fun showHouse() {
+        Log.d("클래스", "parent house=${house}")
+    }
+}
+
+// override: 재정의
+class Child : Parent() {
+    // 상속받으면, 아빠클래스의 프로퍼티와 메서드를 내것처럼 사용할 수 있다
+    override var house = "강남 10평 오피스텔"
+
+    fun showMoney() {
+        Log.d("클래스", "money=${money}")
+    }
+
+    override fun showHouse() {
+        Log.d("클래스", "child house=${house}")
+    }
+}
+
+class Son {
+
+    fun getNumber(zergling: String): Int {
+        return 1
+    }
+
+    fun getNumber(zergling: String, hidra: String): Int {
+        return 2
+    }
 }
