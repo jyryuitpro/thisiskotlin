@@ -163,5 +163,55 @@ class MainActivity : AppCompatActivity() {
         mutableMap.put("변수2", "값2")
 
         Log.d(TAG, "맵 변수1의 값은=${mutableMap.get("변수1")}")
+
+        // for
+        for (index in 1..10) {
+            Log.d("TAG", "index=${index}")
+        }
+
+        for (index in 1 until 10) {
+            Log.d("TAG", "index=${index}")
+        }
+
+        for (index in 1 until 10 step 2) {
+            Log.d("TAG", "index=${index}")
+        }
+
+        var intA = IntArray(10)
+        intA[0] = 0
+
+
+        for (index in 10 downTo 1 step 2) {
+            Log.d("TAG", "index=${index}")
+        }
+
+        var intArray = intArrayOf(0, 10, 20, 30, 40, 50, 60, 70, 80)
+
+        for (value in intArray) {
+            Log.d("TAG", "index=${value}")
+        }
+
+        // while
+        var outCount = 0
+        while (outCount < 3) {
+            Log.d(TAG, "현재 out 카운트=${outCount}")
+            outCount = outCount + 1
+        }
+
+        do {
+            Log.d(TAG, "현재 out 카운트=${outCount}")
+            outCount = outCount + 1
+        } while (outCount < 3)
+
+        // control loop
+        for (index in 0..10) {
+            if (index > 5) break
+            Log.d(TAG, "현재 숫자=${index}")
+        }
+
+        for (index in 0..10) {
+            if (index == 5) continue
+            Log.d(TAG, "현재 숫자=${index}")
+        }
     }
 }
