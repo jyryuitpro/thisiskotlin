@@ -120,5 +120,48 @@ class MainActivity : AppCompatActivity() {
                 Log.d("TAG", "else 입니다.")
             }
         }
+
+        // 배열 (정적배열)
+        // Int -> IntArray
+        var intArr: IntArray = IntArray(10)
+        // index = 0부터 시작
+        intArr[0] = 10
+        intArr[1] = 20
+        intArr[2] = 30
+        intArr[3] = 40
+        intArr[4] = 50
+
+        intArr[9] = 100
+//        intArr[10] = 110
+
+        Log.d("TAG", "9번 인덱스의 값=${intArr[9]}")
+        var weekArray = CharArray(7)
+        weekArray[0] = '월'
+        weekArray[1] = '화'
+        weekArray[2] = '수'
+        weekArray[3] = '목'
+        weekArray[4] = '금'
+        weekArray[5] = '토'
+        weekArray[6] = '일'
+
+        // 컬렉션 (동적배열), Generic(제네릭)
+        // 리스트(배열과 동일), 뮤터블리스트
+        var mutableList = mutableListOf<Int>()
+        // 값 넣기
+        mutableList.add(5)  // index 0
+        mutableList.add(10)  // index 1
+        mutableList.add(75)  // index 2
+        mutableList.add(36)  // index 3
+        mutableList.add(66)  // index 4
+
+        Log.d(TAG, "3번 인덱스(네번째)의 값=${mutableList.get(3)}")
+        Log.d(TAG, "3번 인덱스(네번째)의 값=${mutableList[3]}")
+
+        // 맵 (키, 벨류)
+        var mutableMap = mutableMapOf<String, String>()
+        mutableMap.put("변수1", "값1")
+        mutableMap.put("변수2", "값2")
+
+        Log.d(TAG, "맵 변수1의 값은=${mutableMap.get("변수1")}")
     }
 }
