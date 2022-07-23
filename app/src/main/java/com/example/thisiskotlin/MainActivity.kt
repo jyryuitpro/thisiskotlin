@@ -64,5 +64,61 @@ class MainActivity : AppCompatActivity() {
 
         var helloWorld = "안녕 세상아!"
         var hello_World = "안녕 세상아!"
+
+        var first = 300
+        var second = 500
+        var third = 270
+
+        // 비교연산자 <, >, >=, <=, ==, !=
+        var result1 = first < 500
+        Log.d("TAG", "첫번째 결과=${result1}")
+
+        var result2 = first < 500
+        Log.d("TAG", "두번째 결과=${result2}")
+        // 논리연산자
+        var logic1 = result1 && result2
+        Log.d("TAG", "논리연산 && 결과=${logic1}")
+
+        var logic2 = result1 || result2
+        Log.d("TAG", "논리연산 || 결과=${logic2}")
+        // 부정연산자
+        var logic3 = !result1
+        Log.d("TAG", "부정연산 ! 결과=${logic3}")
+        // if
+        var out = 0
+        var strike = 2
+        if (strike > 2) {
+            out = out + 1
+            fun process1() { }
+        } else if (strike > 3) {
+
+        } else {
+            fun process2() { }
+        }
+        Log.d("TAG", "결과 out=${out}")
+
+        fun process1() { }
+        fun process2() { }
+
+        // 코틀린 when - if문의 확장판
+        var month = 9
+        when (month) {
+            3 -> Log.d("TAG", "3월입니다.")
+            6 -> {
+                Log.d("TAG", "6월입니다.")
+            }
+            9 -> {
+                Log.d("TAG", "9월입니다.")
+            }
+            10, 11, 12 -> {
+                Log.d("TAG", "10, 11, 12월입니다.")
+            }
+            in 1..2 -> {
+                Log.d("TAG", "1, 2월입니다.")
+            }
+            else -> {
+                Log.d("TAG", "else 입니다.")
+            }
+        }
     }
 }
