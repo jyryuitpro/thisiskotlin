@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.5036458333333333" />
+        <entry key="activity/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="activity/src/main/res/layout/activity_sub.xml" value="0.47708333333333336" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4635416666666667" />
         <entry key="basiclayout/src/main/res/layout/activity_main.xml" value="0.4635416666666667" />
         <entry key="checkbox/src/main/res/layout/activity_main.xml" value="0.47760416666666666" />
