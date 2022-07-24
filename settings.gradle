@@ -16,3 +16,4 @@ rootProject.name = "thisiskotlin"
 include ':app'
 include ':basiclayout'
 include ':listener'
+include ':widgets'

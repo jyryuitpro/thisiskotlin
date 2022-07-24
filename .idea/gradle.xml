@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/basiclayout" />
             <option value="$PROJECT_DIR$/listener" />
+            <option value="$PROJECT_DIR$/widgets" />
           </set>
         </option>
       </GradleProjectSettings>
