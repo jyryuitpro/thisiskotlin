@@ -13,6 +13,9 @@
         <entry key="fragment/src/main/res/layout/activity_main.xml" value="0.4703125" />
         <entry key="fragment/src/main/res/layout/fragment_detail.xml" value="0.47760416666666666" />
         <entry key="fragment/src/main/res/layout/fragment_list.xml" value="0.47760416666666666" />
+        <entry key="fragmentlistener/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="fragmentlistener/src/main/res/layout/fragment_receiver.xml" value="0.7838541666666666" />
+        <entry key="fragmentlistener/src/main/res/layout/fragment_sender.xml" value="0.7979166666666667" />
         <entry key="listener/src/main/res/layout/activity_main.xml" value="0.47760416666666666" />
         <entry key="progressbar/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
         <entry key="ratingbar/src/main/res/layout/activity_main.xml" value="0.4630208333333333" />
