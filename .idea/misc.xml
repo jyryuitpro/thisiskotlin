@@ -10,6 +10,9 @@
         <entry key="basiclayout/src/main/res/layout/activity_main.xml" value="0.4635416666666667" />
         <entry key="checkbox/src/main/res/layout/activity_main.xml" value="0.47760416666666666" />
         <entry key="edittext/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
+        <entry key="fragment/src/main/res/layout/activity_main.xml" value="0.4703125" />
+        <entry key="fragment/src/main/res/layout/fragment_detail.xml" value="0.47760416666666666" />
+        <entry key="fragment/src/main/res/layout/fragment_list.xml" value="0.47760416666666666" />
         <entry key="listener/src/main/res/layout/activity_main.xml" value="0.47760416666666666" />
         <entry key="progressbar/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
         <entry key="ratingbar/src/main/res/layout/activity_main.xml" value="0.4630208333333333" />
