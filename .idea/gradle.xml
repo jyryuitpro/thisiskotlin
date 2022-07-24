@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/checkbox" />
             <option value="$PROJECT_DIR$/edittext" />
             <option value="$PROJECT_DIR$/listener" />
+            <option value="$PROJECT_DIR$/toggleandswitch" />
             <option value="$PROJECT_DIR$/widgets" />
             <option value="$PROJECT_DIR$/widgetsradio" />
           </set>
