@@ -13,6 +13,8 @@
         <entry key="listener/src/main/res/layout/activity_main.xml" value="0.47760416666666666" />
         <entry key="progressbar/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
         <entry key="ratingbar/src/main/res/layout/activity_main.xml" value="0.4630208333333333" />
+        <entry key="recyclerview/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="recyclerview/src/main/res/layout/item_recycler.xml" value="0.5" />
         <entry key="seekbar/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
         <entry key="spinner/src/main/res/layout/activity_main.xml" value="0.4703125" />
         <entry key="toggleandswitch/src/main/res/layout/activity_main.xml" value="0.5" />
