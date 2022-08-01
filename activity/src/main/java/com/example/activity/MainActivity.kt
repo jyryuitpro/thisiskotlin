@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             when(resultCode) {
                 99 -> {
                     Log.d("MainActivity", "resultCode")
-                    data?.getStringExtra("returnValue").let { message ->
+                    data?.getStringExtra("returnValue")?.let { message ->
                         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
                     }
                 }

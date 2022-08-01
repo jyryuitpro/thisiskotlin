@@ -4,18 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.5036458333333333" />
+        <entry key="../../Library/Android/sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.7979166666666667" />
         <entry key="activity/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="activity/src/main/res/layout/activity_sub.xml" value="0.47708333333333336" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4635416666666667" />
         <entry key="basiclayout/src/main/res/layout/activity_main.xml" value="0.4635416666666667" />
         <entry key="checkbox/src/main/res/layout/activity_main.xml" value="0.47760416666666666" />
+        <entry key="customview/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="edittext/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
         <entry key="fragment/src/main/res/layout/activity_main.xml" value="0.4703125" />
         <entry key="fragment/src/main/res/layout/fragment_detail.xml" value="0.47760416666666666" />
         <entry key="fragment/src/main/res/layout/fragment_list.xml" value="0.47760416666666666" />
         <entry key="fragmentlistener/src/main/res/layout/activity_main.xml" value="0.5" />
-        <entry key="fragmentlistener/src/main/res/layout/fragment_receiver.xml" value="0.7838541666666666" />
-        <entry key="fragmentlistener/src/main/res/layout/fragment_sender.xml" value="0.7979166666666667" />
+        <entry key="fragmentlistener/src/main/res/layout/fragment_receiver.xml" value="0.5" />
+        <entry key="fragmentlistener/src/main/res/layout/fragment_sender.xml" value="0.5" />
         <entry key="listener/src/main/res/layout/activity_main.xml" value="0.47760416666666666" />
         <entry key="progressbar/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
         <entry key="ratingbar/src/main/res/layout/activity_main.xml" value="0.4630208333333333" />

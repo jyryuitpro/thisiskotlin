@@ -298,9 +298,92 @@ class MainActivity : AppCompatActivity() {
         var safeCallResult2 = safeCallResult.plus(53)
 
         studyRun()
-    }
 
-    // 기본 함수
+        // 스코프 함수
+        // run, let: 자신의 함수 스코프(코드 블록) 안에서 호출한 대상을 this와 it로 대체해서 사용할 수 있습니다.
+
+        // run: 스코프 함수 안에서 호출한 대상을 this로 사용할 수 있습니다. 클래스 내부의 함수를 사용하는 것과 동일한 효과이기 때문에 this는 생략하고 메서드나 프로퍼티를 바로 사용할 수 있습니다.
+
+        var list = mutableListOf<String>("Scope", "Function")
+        list?.run {
+            val listSize = size
+            println("리스트의 길이 run = $listSize")
+        }
+
+        // let: 함수 영역 안에서 호출한 대상을 it으로 사용할 수 있습니다. it을 생략할 수는 없지만 target 등 다른 이름으로 바꿀 수 있습니다.
+        list?.let {
+            val listSize = it.size
+            println("리스트의 길이 let = $listSize")
+        }
+
+        // this와 it으로 구분하기
+        // 앞에서 봤듯이 스코프 함수는 자신을 호출한 대상을 this 또는 it으로 대체해서 사용할 수 있는데, 나머지 스코프 함수의 사용법을 두 가지로 구분해서 알아보겠습니다.
+
+        // this로 사용되는 스코프 함수: run, apply, with
+        // 스코프 함수 안에서 this로 사용되기 때문에 메서드나 프로퍼티를 직접 호출합니다.
+        // 호출 대상인 this 자체를 반환
+        list.apply {
+            val listSize = size
+            println("리스트의 길이 apply = $listSize")
+        }
+
+        // with는 스코프 함수이긴 하지만 앞의 2개와는 다르게 확장 함수가 아니기 때문에 일반 함수처럼 사용됩니다. 따라서 호출하는 대상이 null일 경우에는 with보다는 apply나 run을 사용하는 것이 효율적입니다.
+        // target?.apply { /* 코드 */ }
+        with(list) {
+            val listSize = size
+            println("리스트의 길이 with = $listSize")
+        }
+
+        // it으로 사용되는 스코프 함수: let, also
+        list.let { target ->
+            val listSize = target.size
+            println("리스트의 길이 let = $listSize")
+        }
+
+        // 호출 대상인 this 자체를 반환
+        list.also {
+            val listSize = it.size
+            println("리스트의 길이 also = $listSize")
+        }
+
+        // 반환값으로 구분하기
+        // 호출 대상인 this 자체를 반환하는 스코프 함수: apply, also
+        // apply를 사용하면 스코프 함수 안에서 코드가 모두 완료된 후 자기 자신을 되돌려줍니다. 예제에서 apply 스코프의 마지막 줄에서 count()를 호출했지만 마지막 코드와 상관없이 그냥 MutableList 자신을
+        // Scope, Function에 Apply가 추가된 값이 출력됩니다. also도 동일하게 동작합니다.
+        val afterApply = list.apply {
+            add("Apply")
+            count()
+        }
+        println("반환값 apply = $afterApply")
+
+        val afterAlso = list.also {
+            it.add("Also")
+            it.count()
+        }
+        println("반환값 apply = $afterAlso")
+
+        // 마지막 실행 코드를 반환하는 스코프 함수: let run, with
+        // let, run, with의 결괏값을 반환하는 경우에는 앞의 2개와는 완전히 다른 결과가 나올 수 있으므로 주의해야합니다. 자기 자신이 아닌 스코프의 마지막 코드를 반환하기 때문입니다.
+        val lastCount = list.let {
+            it.add("Run")
+            it.count()
+        }
+        println("반환값 let = $lastCount")
+
+        val lastItem = list.run {
+            add("Run")
+            get(size - 1)
+        }
+        println("반환값 run = $lastItem")
+
+        val lastItemWith = with(list) {
+            add("With")
+            get(size - 1)
+        }
+        println("반환값 with = $lastItemWith")
+   }
+
+    // 기본 수
     fun functionName() {
 
     }
@@ -383,6 +466,61 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+// lateinit
+
+class PersonA {
+    var name: String? = null
+    init {
+        name = "Lionel"
+    }
+    fun process() {
+        name?.plus(" Messi")
+        print("이름의 길이 = ${name?.length}")
+        print("이름의 첫 글자 = ${name?.substring(0,1)}")
+    }
+}
+
+class PersonB {
+    lateinit var name: String
+    init {
+        name = "Lionel"
+    }
+    fun process() {
+        name?.plus("Messi")
+        print("이름의 길이 = ${name.length}")
+        print("이름의 첫 글자 = ${name.substring(0,1)}")
+    }
+}
+
+// lateinit의 특징은 다음 세 가지를 들 수 있습니다.
+// var로 선언된 클래스의 프로퍼티에만 사용할 수 있습니다.
+// null은 허용되지 않습니다.
+// 기본 자료형 Int, Long, Double, Float 등은 사용할 수 없습니다.
+
+// lateinit을 사용할 때는 주의할 점이 있습니다. lateinit은 변수를 미리 선언만 해 놓은 방식이기 때문에 초기화되지 않은 상태에서 메서드나 프로퍼티를 참조하면 null 예외가 발생해서
+// 앱이 종료됩니다. 따라서 변수가 초기화되지 않은 상황이 발생할 수 있다면, Nullable이나 빈 값으로 초기화하는 것이 좋습니다.
+
+// lazy
+// lazy는 읽기 전용 변수인 val을 사용하는 지연 초기화입니다. lateinit이 입력된 값을 변경할 수 있는 반면, lazy는 입력값을 변경할 수 없습니다. 그리고 사용법도 조금 다릅니다.
+// 코드만으로는 조금 생소할 수 있는데 val로 변수를 먼저 선언한 후 코드의 뒤쪽에 by lazy 키워드를 사용하면 됩니다. 그리고 by lazy 다음에 오는 중괄호({})에 초기화할 값을 써주면 됩니다.
+
+class Company {
+    val person: PersonB by lazy { PersonB() }
+    init {
+        // lazy는 선언 시에 초기화를 하기 때문에 초기화 과정이 필요 없습니다.
+    }
+    fun process() {
+        print("person의 이름은 ${person.name}") // 최초 호출하는 시점에 초기화됩니다.
+    }
+}
+
+// lazy의 특징은 다음과 같습니다.
+// 주석에 써 있듯이 선언 시에 초기화 코드를 함께 작성하기 때문에, 따로 초기화할 필요가 없습니다.
+// lazy로 선언된 변수가 최초 호출되는 시점에 by lazy{} 안에 넣은 값으로 초기화됩니다. 앞의 코드에서 Company 클래스가 초기화되더라도 person에 바로 Person()으로 초기화되지 않고, process 메서드에서
+// person.name이 호출되는 순간 초기화됩니다.
+
+// lazy는 주의해서 사용해야 합니다. 지연 초기화는 말 그대로 최초 호출되는 시점에 초기화 작업이 일어나기 때문에 초기화하는 데 사용하는 리소스가 너무 크면 전체 처리 속도에 나쁜 영향을 미칠 수 있습니다.
+
 class Log {
 
     companion object {
@@ -452,18 +590,18 @@ class Son {
 //    var tel = ""
 //}
 
-class SeoulPeople {
-    var persons = mutableListOf<Person>()
+//class SeoulPeople {
+//    var persons = mutableListOf<Person>()
+//
+//    init {
+//        persons.add(Person("Scott", "010-1234-5678", 19))
+//        persons.add(Person("Kelly", "010-3456-7899", 20))
+//        persons.add(Person("Michael", "010-1478-2369", 21))
+//    }
+//}
 
-    init {
-        persons.add(Person("Scott", "010-1234-5678", 19))
-        persons.add(Person("Kelly", "010-3456-7899", 20))
-        persons.add(Person("Michael", "010-1478-2369", 21))
-    }
-}
-
-data class Person (
-    var name: String = "",
-    var phone: String = "",
-    var age: Int = 21
-)
+//data class Person (
+//    var name: String = "",
+//    var phone: String = "",
+//    var age: Int = 21
+//)

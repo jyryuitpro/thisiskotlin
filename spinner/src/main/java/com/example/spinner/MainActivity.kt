@@ -13,8 +13,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        // 데이터
         var data = listOf<String>("-선택하세요-", "1월", "2월", "3월")
 
+        // 스피너 "컨테이너"에 넣어주기 위한 중간 매개역할(adapter)
+        // 데이터가 adapter를 거쳐서 스피터 "컨테이너"에 뿌려지게 됩니다.
         var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
 
         with(binding) {

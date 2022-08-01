@@ -29,13 +29,14 @@ class SenderFragment : Fragment() {
         with(binding) {
             btnYes.setOnClickListener {
                 val bundle = bundleOf("senderKey" to "Yes")
+                // 값 전달
                 setFragmentResult("request", bundle)
             }
 
             btnNo.setOnClickListener {
                 val bundle = bundleOf("senderKey" to "No")
+                // 값 전달
                 setFragmentResult("request", bundle)
-
             }
         }
     }

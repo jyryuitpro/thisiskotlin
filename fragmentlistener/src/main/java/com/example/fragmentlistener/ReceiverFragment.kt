@@ -24,6 +24,8 @@ class ReceiverFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // 수신 준비
+        // bundle: 값이 들어있는 묶음
         setFragmentResultListener("request") { key, bundle ->
             bundle.getString("senderKey")?.let { value ->
                 binding.textView.text = value

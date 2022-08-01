@@ -19,6 +19,7 @@ class SubActivity : AppCompatActivity() {
 
             btnClose.setOnClickListener {
                 // 나를 호출한 측으로 전달하는 인텐트이기 때문에 메인엑티비티라고 써줄 필요가 없다
+                // 생성한 인텐트에 값을 담아서 전달합니다
                 val returnIntent = Intent()
                 val message = editMessage.toString()
                 returnIntent.putExtra("returnValue", message)
