@@ -590,18 +590,18 @@ class Son {
 //    var tel = ""
 //}
 
-//class SeoulPeople {
-//    var persons = mutableListOf<Person>()
-//
-//    init {
-//        persons.add(Person("Scott", "010-1234-5678", 19))
-//        persons.add(Person("Kelly", "010-3456-7899", 20))
-//        persons.add(Person("Michael", "010-1478-2369", 21))
-//    }
-//}
+class SeoulPeople {
+    var persons = mutableListOf<Person>()
 
-//data class Person (
-//    var name: String = "",
-//    var phone: String = "",
-//    var age: Int = 21
-//)
+    init {
+        persons.add(Person("Scott", "010-1234-5678", 19))
+        persons.add(Person("Kelly", "010-3456-7899", 20))
+        persons.add(Person("Michael", "010-1478-2369", 21))
+    }
+}
+
+data class Person (
+    var name: String = "",
+    var phone: String = "",
+    var age: Int = 21
+)

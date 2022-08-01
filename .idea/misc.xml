@@ -27,6 +27,11 @@
         <entry key="seekbar/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
         <entry key="spinner/src/main/res/layout/activity_main.xml" value="0.4703125" />
         <entry key="toggleandswitch/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="viewpagerfragment/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="viewpagerfragment/src/main/res/layout/fragment_a.xml" value="0.5" />
+        <entry key="viewpagerfragment/src/main/res/layout/fragment_b.xml" value="0.5" />
+        <entry key="viewpagerfragment/src/main/res/layout/fragment_c.xml" value="0.5" />
+        <entry key="viewpagerfragment/src/main/res/layout/fragment_d.xml" value="0.5" />
         <entry key="widgets/src/main/res/layout/activity_main.xml" value="0.47760416666666666" />
         <entry key="widgetsradio/src/main/res/layout/activity_main.xml" value="0.4635416666666667" />
       </map>
