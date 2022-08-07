@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/fragment" />
             <option value="$PROJECT_DIR$/fragmentlistener" />
             <option value="$PROJECT_DIR$/listener" />
+            <option value="$PROJECT_DIR$/permission" />
             <option value="$PROJECT_DIR$/progressbar" />
             <option value="$PROJECT_DIR$/ratingbar" />
             <option value="$PROJECT_DIR$/recyclerview" />

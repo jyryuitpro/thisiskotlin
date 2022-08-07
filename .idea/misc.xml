@@ -20,6 +20,7 @@
         <entry key="fragmentlistener/src/main/res/layout/fragment_receiver.xml" value="0.5" />
         <entry key="fragmentlistener/src/main/res/layout/fragment_sender.xml" value="0.5" />
         <entry key="listener/src/main/res/layout/activity_main.xml" value="0.47760416666666666" />
+        <entry key="permission/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="progressbar/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
         <entry key="ratingbar/src/main/res/layout/activity_main.xml" value="0.4630208333333333" />
         <entry key="recyclerview/src/main/res/layout/activity_main.xml" value="0.5" />
