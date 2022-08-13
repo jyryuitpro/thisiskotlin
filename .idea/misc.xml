@@ -13,6 +13,7 @@
         <entry key="customview/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="customwidget/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
         <entry key="edittext/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
+        <entry key="fileio/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="fragment/src/main/res/layout/activity_main.xml" value="0.4703125" />
         <entry key="fragment/src/main/res/layout/fragment_detail.xml" value="0.47760416666666666" />
         <entry key="fragment/src/main/res/layout/fragment_list.xml" value="0.47760416666666666" />

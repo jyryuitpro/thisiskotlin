@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/customview" />
             <option value="$PROJECT_DIR$/customwidget" />
             <option value="$PROJECT_DIR$/edittext" />
+            <option value="$PROJECT_DIR$/fileio" />
             <option value="$PROJECT_DIR$/fragment" />
             <option value="$PROJECT_DIR$/fragmentlistener" />
             <option value="$PROJECT_DIR$/listener" />
