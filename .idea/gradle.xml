@@ -26,6 +26,7 @@
             <option value="$PROJECT_DIR$/ratingbar" />
             <option value="$PROJECT_DIR$/recyclerview" />
             <option value="$PROJECT_DIR$/seekbar" />
+            <option value="$PROJECT_DIR$/sharedpreference" />
             <option value="$PROJECT_DIR$/spinner" />
             <option value="$PROJECT_DIR$/toggleandswitch" />
             <option value="$PROJECT_DIR$/viewpagerfragment" />

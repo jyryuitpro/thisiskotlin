@@ -27,6 +27,7 @@
         <entry key="recyclerview/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="recyclerview/src/main/res/layout/item_recycler.xml" value="0.5" />
         <entry key="seekbar/src/main/res/layout/activity_main.xml" value="0.47708333333333336" />
+        <entry key="sharedpreference/src/main/res/layout/activity_main.xml" value="0.7979166666666667" />
         <entry key="spinner/src/main/res/layout/activity_main.xml" value="0.4703125" />
         <entry key="toggleandswitch/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="viewpagerfragment/src/main/res/layout/activity_main.xml" value="0.5" />
